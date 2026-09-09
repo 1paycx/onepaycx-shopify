@@ -1,0 +1,15 @@
+name = "1pay-shopify"
+main = "src/worker.js"
+compatibility_date = "2024-10-01"
+
+# Public config — edit these for your store.
+[vars]
+SHOPIFY_SHOP = "your-store.myshopify.com"   # the *.myshopify.com admin host
+SHOP_URL = "https://your-store.com"          # your public storefront (for the return redirect + CORS)
+ONEPAY_API_BASE = "https://1pay.cx/api"
+SHOPIFY_API_VERSION = "2024-10"
+
+# Secrets — set with `wrangler secret put <NAME>` (never commit these):
+#   SHOPIFY_ADMIN_TOKEN    — Admin API access token from your Shopify custom app
+#   ONEPAY_API_KEY         — your 1pay.cx API key
+#   ONEPAY_WEBHOOK_SECRET  — your 1pay.cx account webhook secret (used to verify callbacks)
